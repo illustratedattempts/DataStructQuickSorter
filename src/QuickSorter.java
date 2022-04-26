@@ -26,8 +26,9 @@ public class QuickSorter
         // Start Program Timing Here:
         long startTime = System.nanoTime();
         quickSort(int_list, 0, int_list.length-1, pivotStrategy);
-
         long endTime = System.nanoTime();
+
+        //System.out.println(Arrays.toString(int_list));
         long exec_Time = endTime - startTime;
 
         return Duration.ofNanos(exec_Time);
@@ -41,6 +42,7 @@ public class QuickSorter
             int pivot_pos = partition(a, left, right, pivotStrategy);
             quickSort(a, left, pivot_pos - 1, pivotStrategy);
             quickSort(a, pivot_pos + 1, right, pivotStrategy);
+
         }
     }
     private static int partition(int[] arr, int lo, int hi, PivotStrategy pivotStrategy)
@@ -104,7 +106,7 @@ public class QuickSorter
                 int before = Index1;
                 int middle = Index2;
                 int after = Index3;
-                System.out.println("BEFORE: " + Arrays.toString(arr));
+                //System.out.println("BEFORE: " + Arrays.toString(arr));
                 //System.out.println("BEFORE: " +  "before: " + before + " middle: " + middle + " after: " + after);
                 // Need to compare positions to know where they are for placement
                 if (middle < before)
@@ -163,9 +165,9 @@ public class QuickSorter
                 int temp_swap = arr[hi];
                 arr[hi] = arr[middle];
                 arr[middle] = temp_swap;
-                System.out.println("AFTER: " + Arrays.toString(arr));
+                //System.out.println("AFTER: " + Arrays.toString(arr));
                 pivot = arr[pivot_holder];
-                System.out.println("Pivot: " + pivot + " Pivot_Holder: " + pivot_holder);
+                //System.out.println("Pivot: " + pivot + " Pivot_Holder: " + pivot_holder);
             }
         }
         int i = lo - 1;
@@ -183,7 +185,7 @@ public class QuickSorter
         int temp = arr[i];
         arr[i] = arr[pivot_holder];
         arr[pivot_holder] = temp;
-        System.out.println("lo: " + lo + " hi: " + hi + " After Partition: " + Arrays.toString(arr));
+        //System.out.println("lo: " + lo + " hi: " + hi + " After Partition: " + Arrays.toString(arr));
         return i;
     }
     public static ArrayList<Integer> generateRandomList(int size)
