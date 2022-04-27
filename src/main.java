@@ -41,7 +41,8 @@ public class main
 
 
         // Unsorted JUST 10% of elements
-        int tenpercent_arr = arr_size/10;
+        double calc_ten = arr_size * .1;
+        int tenpercent_arr = (int)calc_ten;
 
 
         Random numGen = new Random();
