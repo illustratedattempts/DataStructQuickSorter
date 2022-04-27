@@ -12,6 +12,7 @@ public class QuickSorter
         MEDIAN_OF_THREE_RANDOM_ELEMENTS,
         MEDIAN_OF_THREE_ELEMENTS
     }
+    static int[] access_list;
 
     public static <E extends Comparable<E>> Duration timedQuickSort(ArrayList<E> list, PivotStrategy pivotStrategy)
     {
@@ -30,7 +31,7 @@ public class QuickSorter
 
         //System.out.println(Arrays.toString(int_list));
         long exec_Time = endTime - startTime;
-
+        access_list = int_list;
         return Duration.ofNanos(exec_Time);
 
     }
